@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rewrite the function using '?' or '||'</title>
+</head>
+<body>
+        <!-- function checkAge(age) {
+            if (age > 18) {
+              return true;
+            } else {
+              return confirm('Do you have your parents permission to access this page?');
+            }
+          } -->
+          <script>
+        /* 
+           function checkAge(age){
+               return (age>18) ? true : confirm('bo me ban cho phep vao trang nay?');
+           }
+           checkAge(15); */
+
+           function checkAge(age){
+               (age>18)|| confirm('bo me ban cho phep');
+           }
+           checkAge(20);
+           console.log(checkAge)
+          </script>
+</body>
+</html>

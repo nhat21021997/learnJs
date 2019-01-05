@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Switch</title>
+</head>
+<body>
+	<script>
+		let x=+prompt("nhập vào giá trị là số <=10",''); // thêm dấu + phía trước để conver sang
+		// number. vì tất cả dữ liệ nhập vào đề là String
+		switch(x){
+			case 10: // if(x===10)
+			console.log(`Số vừa nhập là ${x}`); // thì in ra
+			break;
+			case x>10: // không chạy
+			console.log('giá trị nhập lớn hơn 10');break;
+			default:
+			console.log('chưa có giá trị');break;
+			//nếu thiếu break thì nó sẽ chạy từ case đó trở đi đến hết
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <!-- min(2, 5) == 2
+        min(3, -1) == -1
+        min(1, 1) == 1 -->
+
+        <!-- pow(3, 2) = 3 * 3 = 9
+        pow(3, 3) = 3 * 3 * 3 = 27
+        pow(1, 100) = 1 * 1 * ...* 1 = 1 -->
+        <script>
+            // TIM MIN
+            /*function min(a,b){
+                if(a>b){
+                    return b;
+                }else{return a}
+            }
+            console.log(min(2,5));
+            console.log(min(3,-1));
+            console.log(min(1,1));*/
+
+            //FUNCTION POWER(X,N);
+            function pow(x,n){
+                let result = x;// gán 1 giá trị cho x để sau mỗi lần n tăng thì x*x tần đó lần
+                for(let i=1; i<n;i++){
+                    result = result*x;
+                }
+                return result;
+            }
+           let x =+prompt('nhap vao gia tri:','');
+           let n =+prompt('Nhap vao so mu n:','');
+           if(x<0){
+               alert(`gia tri ${x} nhỏ nhơn không nên không hợp lệ`);
+
+           }{
+               alert(pow(x,n));
+           }
+        </script>
+</body>
+</html>

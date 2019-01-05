@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Function</title>
+</head>
+<body>
+   <script>
+    //function nameF(parameter){
+        //body
+    //}
+    
+    function showPrime(n){
+        for(let i=2; i<n; i++){
+            if(!isPrime(i)) continue;
+            console.log(i);
+        }
+    }
+    function isPrime(n){
+        for(let i=2; i<n; i++){
+            if(n%i == 0) return false; //Không hiểu tại sao n lại tăng được
+            // console.log('isprime i' + i);
+            // console.log('isprime n' + n);
+        }
+        return true;
+    }
+    showPrime(10);
+
+    //cach 2
+
+    // function showPrime(n){
+    //     primeNext:
+    //     for(let i=2;i<n;i++){
+    //         for(let j=2; j<i; j++){
+    //             if(i%j == 0) continue primeNext;
+    //         }
+    //         console.log('ket qua la: | '+ i);
+    //     }
+    // }
+    // showPrime(20);
+    </script> 
+</body>
+</html>
