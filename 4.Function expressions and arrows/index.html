@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- function sayHi() {
+        alert( "Hello" ); cách gọi 1 function declaration
+      } -->
+      <!-- let a = function sayHi(){
+          alert('hello'); cách gọi 2 function expresstion
+      };  chú ý dấu chấm phẩy ở cuối--> 
+
+      <!-- có thể copy function bằng cách gán biến -->
+      <!-- function sayHi(){
+          console.log('Nhat');
+      }
+      let func = sayHi; nếu viết sayHi() thì nó sẽ copy kết quả của sayHi chứ không phải hàm sayHi
+      alert(sayHi)=== alert(func) -->
+
+      <script>
+         /* function ask(question,yes,no){
+            (confirm(question))? yes():no();
+          }
+          ask('chon yes or no', function yes(){alert('ban vua click yes')},function no(){alert('ban vua click no')}); */
+
+          //declaration
+         /* let age =prompt('nhap tuoi','');
+          if(age<18){
+            //--------------------
+            checkAge();// code se chay vi declaration chi chay trong 1 khoi block;
+            function checkAge(){
+              alert('chua du tuoi');
+            }
+            //------------------------
+          }else{
+            //---------------------------------------
+            function checkAge(){
+              alert('du tuoi');
+            }
+            checkAge(); // code se chay vi declaration chi chay trong 1 khoi block;
+            //------------------------------
+          }
+
+
+          let welcome;
+          if(age>18){
+            welcome=function checkAge1(){
+              console.log('du tuoi');
+            };
+          }else{
+            welcome=function checkAge1(){
+              console.log('thieu tuoi');
+            };
+          }
+          welcome();// chay vi ta khai bao expresstion
+          let learn = (age>18)?function(){console.log('dung lon hon 18')} : function(){console.log('nho hon 18')};
+          learn(); */
+      </script>
+
+      <!-- ARROW FUNCTION -->
+<!-- ------------------------------------------------------------------- -->
+      <!-- let func = function(arg1, arg2, ...argN) {
+          return expression;
+        }; -->
+      <!-- let func = (arr1, arr2,...arrN) => expresstion -->
+
+      <!-- let sum = (a, b) => a + b;
+
+        /* The arrow function is a shorter form of:
+
+        let sum = function(a, b) {
+          return a + b;
+        };
+        */
+
+        alert( sum(1, 2) ); // 3 -->
+
+        <script>
+          let mul= (a,b) => a*b;
+          console.log(mul(2,3));
+
+        </script>
+        <!-- function ask(question, yes, no) {
+            if (confirm(question)) yes()
+            else no();
+          }
+
+          ask(
+            "Do you agree?",
+            function() { alert("You agreed."); },
+            function() { alert("You canceled the execution."); }
+          ); viết lại dưới dạng arrow function-->
+        <script>
+          let ask = (question,yes,no) => (confirm(question))?yes():no();
+          ask('Do you agree?',()=> console.log("You agreed."),()=>console.log("You canceled the execution."));
+
+        </script>
+</body>
+</html>
