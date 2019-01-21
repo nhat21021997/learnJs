@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function tronText(arr) {
+            let mapArr = new Map();
+
+            for( let word of arr) {
+                let stored = word.toLowerCase().split('').sort().join('');
+                mapArr.set(stored, word);
+            }
+            return Array.from(mapArr.values());
+        }
+        let a = [ "teachers", "cheaters", "hectares"];
+        console.log(tronText(a));
+    </script>
+</body>
+</html>

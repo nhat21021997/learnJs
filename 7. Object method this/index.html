@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Object method this</title>
+</head>
+<body>
+	<script>
+		'use strict'
+		/*let user = {
+			name: 'Nhat',
+			age: 21,
+
+			sayHi(){
+				alert('Hello '+ this.name); // viet this.name thay cho user.name de admin co the truy cap khi user bi xoa
+			}
+		};
+
+		let admin = user;
+		user = null;
+
+		admin.sayHi();*/
+
+/*
+		let user = {name: "John"};
+		let admin = {name: "Ann"};
+
+		function sayHi(){
+			alert(this.name);
+		}
+
+		user.f = sayHi;
+		admin.f= sayHi;
+
+		user.f();
+		admin["f"]();
+*/
+	
+		let user = {
+			name:'John',
+			age: 20,
+
+			sayHi(){
+				alert(this.age);
+			}
+		};
+
+		let admin = user.sayHi; // khi gan mot bien moi thi khong the tham thieu den this.age duoc. muon su dung dung user.age
+		admin();
+
+		
+	</script>
+</body>
+</html>

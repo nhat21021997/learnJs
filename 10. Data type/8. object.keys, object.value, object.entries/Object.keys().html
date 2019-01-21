@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = {
+            name: 'Nhat',
+            age: 21,
+            city: 'Ha Noi',
+        };
+
+        for(let value of Object.values(user)){
+            console.log(value);
+        }
+        for( let value of Object.keys(user)){
+            console.log(value);
+        }
+        Object.entries(user).forEach((key) => console.log(key));
+        for(let value of Object.entries(user)){
+            console.log(`gia tri cua entries la ${value}`);
+        }// for of chi tra ve gia tri.. con forEach(func) tra ve mot mang
+    </script>
+</body>
+</html>

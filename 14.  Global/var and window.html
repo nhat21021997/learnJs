@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = 'nhat'; // su dung let va const => undefined
+
+        function showName() {
+            var name = 'Hai';
+            console.log(window.name); // Nhat
+        }
+        showName();
+
+        // tao bo dem don gian
+
+        function makeCounter() {
+            let count = 0;
+
+            function counter() {
+                return count++;
+            }
+            counter.set = value => count = value;
+            counter.decrease = () => count--;
+            
+            return counter;
+
+        }
+        let dem = makeCounter();
+        counter.set = 5;
+        console.log(dem());
+        console.log(dem());
+    </script>
+</body>
+</html>

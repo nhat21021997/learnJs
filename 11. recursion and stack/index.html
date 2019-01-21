@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let list = {
+            value: 1,
+            next: {
+                value: 2,
+                next: {
+                value: 3,
+                next: {
+                    value: 4,
+                    next: null
+                }
+                }
+            }
+            };
+
+            function printReverseList(listItem) {
+                
+                if(listItem.next){ // nếu là listItem.next thì tiếp tục chạy và in ra kết quả
+                    printReverseList(listItem.next);
+                }
+                console.log(listItem.value);
+            }
+            printReverseList(list);
+
+            //dùng for
+
+            function inNguocMang(item) {
+                let arr = [];
+                let tmp = item;
+
+                while(tmp) {
+                    arr.push(tmp.value);
+                    console.log(tmp = tmp.next);
+                }
+
+                //duyệt mảng
+                for(let i=arr.length -1; i>=0; i--) {
+                    console.log(arr[i]);
+                }               
+            }
+            inNguocMang(list);
+    </script>
+</body>
+</html>

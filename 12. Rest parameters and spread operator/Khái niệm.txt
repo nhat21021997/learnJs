@@ -1,0 +1,2 @@
+﻿Các tham số còn lại bắt buộc phải ở cuối. nếu chen vào vị trí khác gây ra lỗi.
+hàm mũi tên không sử dụng được this và arguments () =>

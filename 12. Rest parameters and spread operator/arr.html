@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //... dùng để tổng hợp các phần còn lại thành một mảng
+        let arr = [1,2,3,4,5];
+        let arr2 = ['nhat'];
+        let str = "Nhat";
+        console.log(Math.max(...arr));
+
+        //dùng để hợp nhất mảng
+        let merge = [...arr, ...arr2];
+        console.log(merge);
+
+        //chia chuỗi thành các kí tự
+        console.log([...str]);// = Array.from(str); biến cái gì đó thành mảng
+    </script>
+</body>
+</html>

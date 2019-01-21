@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map</title>
+</head>
+<body>
+    <script>
+        let idMaparr = new Map([
+            [1 , 'Nhat'],
+            [2, 'Hai']
+        ]);
+
+        console.log(idMaparr);
+        //đối với Obj cần sử dụng Object.entries trong Map();
+        let mapObj = new Map(Object.entries({
+            name: 'Nhat',
+            age: 20,
+            sex: 'Male'
+        }));
+
+        for( let value of mapObj.keys()){
+            console.log(value);
+        }
+
+        for(let value of idMaparr.values()){
+            console.log(value);
+        }
+        for(let value of mapObj.entries()) {
+            console.log(` entries la ${value}`);
+        }
+
+        mapObj.forEach( (value, key, map) => console.log(`gia tri key ${key} gia tri value: ${value} gia tri map ${map}`) );
+        console.log(mapObj);
+    </script>
+</body>
+</html>

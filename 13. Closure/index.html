@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // biến là một thuộc tính của một đối tượng nội bộ riêng biệt được liên kết với một khối hàm , tập lệch đang được thực thi
+        //làm việc với biến là làm việc với đối tượng của thuộc tính đó
+        //closure: tất cả các chức năng trong JS đều bị đóng.
+        // biểu thức hàm được gọi ngay lập tức  là : IIFE
+
+        // viet ham tính tổng sum(a)(b) = a+b
+        function sum(a) {
+            return function sum(b) {
+                return  a + b;
+            }
+        }
+        console.log(`ket quả của sum(3)(4): ${sum(3)(4)}`);
+
+        //tìm trong khoảng giữa
+        function inBeetween(a, b) {
+            return function(x) {
+                return a <= x && b >= x;
+            }
+        }
+        let arr = [1,2,3,4,5,6,7,8];
+        console.log(arr.filter(inBeetween(2, 7)));
+
+        //tim giá trị đúng trong giá trị
+        function inArray(arr) {
+
+            return function(x) {
+                return arr.includes(x);
+            }
+        }
+
+        console.log(`Gia tri ton tai trong mang la: ${arr.filter(inArray([2, 100, 6, 9]))}`);
+
+         // viet ham sap xep byField;
+         let users = [
+            { name: "John", age: 20, surname: "Johnson" },
+            { name: "Pete", age: 18, surname: "Peterson" },
+            { name: "Ann", age: 19, surname: "Hathaway" }
+        ];
+
+         function byField(field) {
+
+             return (a, b) => a[field] > b[field] ? 1 : -1 ;
+         }
+
+         users.sort(byField('name'));
+         users.forEach(element => {
+             console.log(element.name);
+         });
+
+         users.sort(byField('age'));
+         users.forEach(value => {
+            console.log(value.age);
+         });
+
+         //
+         function ArrShot() {
+             let arr = [];
+
+             for(let i = 0; i<10; i++) {
+                 let shot = function(){
+                     console.log(`phan tu trong vong for la ${i}`);
+                 }
+                 arr.push(shot);
+             }
+             return arr;
+         }
+
+        let result  = ArrShot();
+        result[5]();
+        result[3]();
+
+        // luu tru va lay ket qua trong while
+
+        function whileCa() {
+            let arr = [];
+            let i = 0 ;
+
+            while(i<10){
+                let j = i;
+
+                let shot = function() {
+                    console.log(j);
+                }
+                arr.push(shot);
+                i++;
+            }
+            return arr;
+        }
+
+        let ketqua = whileCa();
+        ketqua[5]();
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Oject</title>
+</head>
+<body>
+	<!-- Một đối tượng coi như là 1 cái tủ và các giá trị như là các vật phẩm trong tủ.
+	truy cập biến từ trong object sử dụng dấu chấm ".";
+	Giá trị có thể là bất cứ loại nào.
+	Có thể sử dụng thuộc tính( là chuỗi) đa từ sau đó trích dẫn : "likes birds": true .
+
+	Sử dụng dấu ngoặc vuông để trích dẫn bất cứ chuỗi :  alert(user["likes birds"]); // true
+	let key = "Nguyen Nhat";
+	// same as user["Nguyen Nhat"] =  true;
+	user[key]= true; -->
+	
+	<!-- ví dụ -->
+	<script>
+		/*let getInfo = {
+			name: "Nhat",
+			age: 22,
+			sex: 'male',
+		}
+		let key = prompt("Nhap vao ten cuar gia tri",'');
+		// alert( getInfo[key] );
+		console.log( getInfo[key] ); */
+	</script>
+	
+	<script>
+		let fruit = prompt("Nhap vao ten hoa qua:",'tao');
+
+		let bag ={
+			[fruit]: 5,
+		};
+
+		console.log(bag.tao);
+	</script>
+</body>
+</html>

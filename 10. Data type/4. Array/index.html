@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+    /*
+    
+        * Array dùng để lưu trữ cục bộ một tập danh sách có thứ tự thay cho Object vì Object không có phương pháp nào để quản lí thứ tự các phần tử
+        * Các phần tử được đánh số bắt đầu từ 0, để lấy phần tử ta dùng dấu ngoặc vuông[]
+        * làm việc với dữ liệu sắp xếp liền kề
+        * duyệt mảng ta dùng for( let i=0; i < arr.length; i++), hoặc dùng for of để lấy giá trị: nhưng nó ko truy cập vào vị trí của mảng.for(let key of arr)
+        * Về cơ bản mảng cũng là 1 đối tượng lên cũng dùng được for(let key in arr)-Không nên dùng cho mảng làm chậm 10-100 lần;
+        * String(arr) -> danh sách phần tử được ngăn cách bởi dấu phẩy
+        * [] + number -> String "" : khi đó []-> "", [1] -> "1"
+        * Khi copy mảng thì nó chỉ tham chiếu đến phần tử của mảng chứ không tạo ra một mảng mới
+    
+    */
+        
+    // cú pháp khai báo phần tử
+        //let arr = new Array(); 
+    /* ()    let arr = []; 
+
+        console.log([1,2,3,4] + 9); // 1,2,3,4,9
+
+        //làm việc mới mảng
+        let styles = ['Jazz Jazz', 'Blues Blues'];
+        styles.push("Rock Rock-n-Roll");
+        //thêm phần tử vào giữa mảng
+        styles[Math.floor(styles.length -1)/2]="Class Classics";
+        console.log(styles.shift());
+        console.log(`them phan tu vao ${styles.unshift('Rap', 'Reggae')}`);
+
+        console.log(styles);
+
+        // gọi mảng từ function
+        let arrF = ['a', "b"];
+        arrF.push(function(){
+            console.log(this);
+        })
+        arrF[2]();
+
+        function sumInput() {
+            let number = [];
+
+            let runing = true;
+            while(runing){
+                let values = prompt('Nhap vao gia tri', '');
+                if(values == null || values ===  "" || !(isFinite(values))) break;
+                number.push(+values);
+            }
+            console.log(number);
+
+            let sum = 0;
+            for(let key of number){
+                sum +=key;
+            }
+            return sum;
+        }
+        console.log( sumInput() );
+        */
+    </script>
+        
+    <script>
+        //tìm tổng tiếp giáp lớn nhất
+
+        function getMaxSubSum(arr) {
+            let sumValue = 0;
+            let maxSum = 0;
+
+            for(let key of arr){
+                sumValue += key;
+                maxSum = Math.max(sumValue, maxSum);
+                if(maxSum < 0) maxSum = 0;
+            }
+            return sumValue;
+        }
+        console.log( getMaxSubSum([2,-2,3,4,8]));
+        console.log( getMaxSubSum([-3,-2,3,-4,8]));
+    </script>
+</body>
+</html>

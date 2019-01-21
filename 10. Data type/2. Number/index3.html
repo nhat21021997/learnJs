@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    /*
+
+        -Hàm tạo ra giá trị random() từ 0-1 không bao gồm 0,1
+        -random() integer dung ta dung floor: lam tron giam: ket hop voi max + 1
+
+    */
+
+        function randomTo(min,max) {
+            return max - Math.random()*(max-min);
+        }
+        console.log(`ket qua cua random la: ${randomTo(2,3)}`);
+
+        function randomInteger(min,max) {
+            let rand = max - Math.random()*(max+1 - min);
+            return Math.floor(rand);
+        }
+        console.log('ket qua cua randomInteger la: ' + randomInteger(2,7));
+
+
+    </script>
+</body>
+</html>

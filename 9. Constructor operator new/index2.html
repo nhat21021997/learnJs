@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Accumulator(startingValue) {
+			this.value = startingValue;
+
+			this.read = function(){
+				this.value += +prompt('nhap value','');
+				return this;// viet this de chuyen doi tu tuan tu thanh chuoi
+			}
+		}
+		let accumulator = new Accumulator(0);
+		accumulator.read().read(); // da chuyen tu tuan tu thanh chuoi
+		console.log(accumulator.value);
+		</script>
+</body>
+</html>

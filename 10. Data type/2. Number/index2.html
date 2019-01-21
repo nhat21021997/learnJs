@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//console.log(Math.round(6.45*10)/10);
+		/*
+			
+			*Tạo hàm Yêu cầu người dùng nhập số cho đến khi đúng.
+			*Cho phép người dùng ấn cancel và "" => null
+			* trả về kết quả là số
+			*Không kiểm tra đẳng thức bằng số thập phân vì nó gây lên sai lệch 0.2.toFixed(20): ra số khác
+			
+		*/
+
+		function checkNumber() {
+			let num;
+
+			do {
+				num = prompt('Nhap gia tri','');
+			}while(!isFinite(num));
+
+			if( num === null || num ===''){
+				return null;
+			}else {
+				return +num;
+			}
+		}
+		console.log(`ket qua cua phep tinh: ${checkNumber()}`);
+
+	</script>
+</body>
+</html>

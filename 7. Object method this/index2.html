@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bài tập</title>
+</head>
+<body>
+	<script>
+		let calculator = {
+			sum(){
+				return this.a + this.b ;
+			},
+			mul(){
+				return this.a * this.b ;
+			},
+			read(){
+				this.a = +prompt('a?','');
+				this.b = +prompt('b?','');
+			}
+		};
+		calculator.read();
+		console.log( calculator.sum() );
+
+	</script>
+</body>
+</html>

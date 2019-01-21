@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      function camelize(str) { //nhat-nguyen-van
+          return str
+                .split('-')
+                .map( (word,index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1) )
+                .join('');
+      }
+      let result = camelize('nguyen-van-nhat');
+      console.log(result);
+
+      //tìm giá trị nằm giữa của mảng nằm trong arr của khoảng giá trị a,b
+        function filterRange(arr, a, b){
+            return arr.filter( (item) => (item <= a && item >= b) );
+        }
+        let arr = [4, 5, 9, 3];
+        let range = filterRange(arr, 7, 3);
+        console.log(range);
+
+        //tìm giá trị nằm giữa mảng trong khoảng cho trk và loại bỏ giá trị dư thừa
+        function filterAr(arr, a, b) {
+            for(let i = 0; i < arr.length; i++){
+                let val = arr[i];
+
+                if(val < a || val > b){
+                    arr.splice(i, 1);
+                   i--;
+                }
+            }
+        }
+        let arr1 = [3,3,2,4,7,5,47,8]; 
+        console.log( filterAr(arr1, 2, 8) )
+    </script>
+</body>
+</html>

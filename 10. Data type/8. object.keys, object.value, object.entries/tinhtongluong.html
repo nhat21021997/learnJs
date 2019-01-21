@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let luong = {
+            nhanvien1: '300',
+            nhanvien2: '600',
+            nhanvien3: '100'
+        };
+        function tongLuong() {
+            let sum = 0;
+            for(let value of Object.values(luong)) {
+                if(luong == null){
+                    sum = 0;
+                }else{sum +=+value;} 
+            }
+            return sum;
+        }
+        function getLength() {
+            return Object.values(luong).length;
+        }
+        console.log(getLength());
+        console.log( tongLuong() );
+
+        // lặp lại key và value cùng một lúc
+        let lap = {
+            name: 'Nhat',
+            age: 22,
+        };
+
+        let {name, age} = lap;
+        console.log(name);
+        console.log(age);
+        for(let [key, value] of Object.entries(lap) ){
+            console.log(key+value);
+        }
+
+        // lưu trữ phần tử  vào map rồi in ra
+         let map = new Map();
+         map.set('Nguyen','Nhat');
+         map.set('Văn','Nhat');
+         // in phần tử ra khỏi mảng
+         for(let [key, value] of map.entries()){
+             console.log(`value của mảng là ${key} , \n key của mảng là ${value}`);
+         }
+
+         let user = {};
+         [user.name, user.age] = "Nhat, 20".split(', ');
+         console.log(user);
+
+         let [...rest] = ["Nhat", "Nguyen", "Van"];
+         console.log(rest[1]);
+         console.log(rest.length);
+
+         
+    </script>
+</body>
+</html>

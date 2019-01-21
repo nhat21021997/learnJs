@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chuyen doi</title>
+</head>
+<body>
+	<script>
+		let ladder = {
+			step : 0,
+			up(){
+				this.step++;
+				return this;
+			},
+			dow() {
+				this.step--;
+				return this;
+			},
+			showStep() {
+				console.log(this.step)
+				return this;
+			} 
+		}
+		//  cuộc gọi theo chuỗi
+		ladder.up().dow().up().showStep(); // ket qua ra 1
+		// ladder.up();
+		// ladder.dow();
+		// ladder.dow();
+		// ladder.showStep();
+	</script>
+</body>
+</html>

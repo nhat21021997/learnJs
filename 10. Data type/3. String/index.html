@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+
+        * st[pos] lấy ra ký tự -> lấy ra kí tự cuối cùng str[str.length -1 ]
+
+        * lặp lại ký tự dùng for of
+
+        *replace the string -> sử dụng toán tử +: 
+        *str.indexOf(target, pos) : tìm kiếm từ vị trí bắt đầu pos đến vị trí tìm thấy target
+        *if(str.indexOf("nhat")){..} Không làm việc. vì str.indexOf("nhat") -> 0 mà if coi 0 = false muốn làm việc ta thêm != -1
+        * str.include(target, pos) dùng để kiểm tra chuỗi mà ko cần biết vị trí. -> true or false;
+        *str.startsWith(target), str.endsWith(target) : kiểm tra chính xác đầu hoặc cuối chuỗi
+        *str.slice(start [, end]) trả về một phần của chuỗi từ start -> end ( nhưng không bao gồm end), giá trị âm đi ngược lại từ right
+
+
+    */
+    
+        let str = 'Nhat';
+        console.log('lấy ra kí tự thứ 2 từ trái qua phải ' +  str[1]); //h
+        console.log('lấy ra kí tự cuối cùng từ trái qua phải ' +  str[str.length-1]); //t
+        for(let key of str){
+            console.log(key); // N,h,a,t
+        }
+
+        str = 'Nguyễn Văn N' + str[3]; // ghép chuỗi nối phần tử thứ index là 4: Nguyễn Văn Nt
+        console.log(str);
+
+        //tìm vị trí của n trong chuỗi.
+
+        let strValue = 'nguyen van nhat nhat';
+        let target = 'nhat';
+        
+        let pos = -1;
+        while((pos = strValue.indexOf(target, pos +1)) != -1){
+            console.log(pos);// 11 and 16
+        }
+
+
+        //slice
+        let strSlice = 'nguyen văn nhất';
+        console.log(strSlice.slice(-5, -1)); //nhấ
+
+        //trả về chuỗi với kí tự đầu tiên được viết hoa
+        
+        function upperFristText(text){
+            if(!text) return text;
+
+            return text[0].toUpperCase() + text.slice(1);
+            
+        }
+        let kq = upperFristText("nhat");
+        console.log(kq);
+
+        // viet mot ham kiem tra thu ra
+        function checkSpam(spam) {
+            let spamLowerCase = spam.toLowerCase();
+
+            if(!(spamLowerCase.includes('xxx') || spamLowerCase.includes('viagra'))){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        let check = checkSpam('XXX');
+        console.log(check);
+
+        //giới hạn độ dài của chuỗi
+        function truncate(str, maxlength) {
+        //     if(str.length > maxlength){
+        //         return str.slice(0, maxlength-1) + '...';
+        //     }else{
+        //         return str;
+        //     }
+
+            return (str.length > maxlength) ? str.slice(0, maxlength -1) + '..' : str;
+         }
+         let name = 'Nguyen van nhat, que ha noi, gioi tinh nam, thich gai';
+         let num =11;
+        let result =  truncate(name, num);
+        console.log(result);
+
+        //tra ve gia tri cua tien thành số. nếu đơn vị ở cuối ta dùng parseInt()
+
+        function extractCurrencyValue(str) {
+            return +str.slice(1);
+        }
+        console.log( extractCurrencyValue('$20000') );
+        console.log(parseInt('200px'));
+    </script>
+</body>
+</html>

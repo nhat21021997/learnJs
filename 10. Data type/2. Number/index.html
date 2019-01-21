@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		
+		* Số 0 được viết tắt là 3e9: 3 và 9 số 0.
+		* let ms = 1e-6; 6 số 0 đếm từ trái : 0.000001 hay 1/1000.000
+		*num.toString(base); base: 2___,16:chữ số có thể 0..9hoặc A..F.____,36
+		* ..toString(base) để gọi 1 phương thức === (123).toString(base)
+
+		**làm tròn
+		*Math.floor làm tròn xuống
+		*Math.ceil làm tròn lên
+		*Math.round làm tròn đến số nguyên gần nhất
+		*
+		
+		*so sánh với object.is(NaN, NaN);
+		*parseInt('a123')-> NaN: bắt đầu bằng một chuỗi, sử dụng parseInt để chuyển 100px thàng số
+		
+		*Math.random(),Math.min(), Math.max(), Math.pow(,), 
+
+		*/
+
+		let cal = {
+			sum(){
+				return this.a + this.b;
+				return this;
+			},
+			read(){
+				this.a = +prompt('a?','')
+				this.b = +prompt('b?','')
+				return this;
+			},
+			show(){
+				alert(this.sum());
+				return this;
+			}
+		}
+
+		cal.read();
+		cal.sum();
+		cal.show();
+	</script>
+</body>
+</html>

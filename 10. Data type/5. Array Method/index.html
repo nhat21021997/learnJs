@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array Method</title>
+</head>
+<body>
+    <script>
+    
+    /*
+    
+        * arr.splice(index, deteleCount, Element,...,ElementN); xóa tự vì trí index đến detelecount và thêm vào đó Element
+        * arr.splice(index, deteleCout, ...) cho phép index âm. nó sẽ đếm từ phải qua trái
+        * arr.slice(start, end)Nó lấy từ phần tử đầu đến phần tử kết thúc ( không tính phần tử kết thúc)
+        * arr.concat([b,c]) dùng để nối phần tử vào mảng
+        * Nếu đối tượng giống như mảng có Symbol.isConcatSpreadable thì nó sẽ thêm các phần tử của đối tượng đó vào mảng.
+        * forEach(item, index, array) là phương pháp lấy ra toàn bộ chức năng của mảng
+        * indexOf(index, from) trả về chỉ mục từ index tới from và không tim thấy trả về -1
+        * lastIndexOf(index, from) tính từ phải qua trái.
+        * includes(index, from), tìm kiếm theo chỉ mục trả về true nếu tìm thấy
+        * arr.map() là phương pháp chuyển đổi và sắp xếp lại mảng
+        * arr.sort() khi sắp xếp number sẽ được chuyển thành string 2 va 15 => "2" va "15" vậy "2">"15"
+        * arr.reverse() dùng để đảo ngược vị trí trong mảng
+        * arr.split(, ) bỏ dâu phẩy và đưa phần tử vào mảng, nếu có 2 tham số thì dùng để giới hạn độ dài của mảng
+        * arr.join() ngược lại với split
+        * reduce(fucntion(previousValue, item, index, array), initial)
+        * isArray() kiểm tra phần tử có phải là một mảng hay không.
+
+    */
+    
+        let arr = [1,2,3,4];
+        let listName = {
+            0: 'Nhat',
+            1: 'Hai',
+            [Symbol.isConcatSpreadable]: true,
+            length: 2
+        };
+        // phần tử object truyền vào mảng bắt buộc phải có thứ tự 
+        console.log(arr.concat(listName));
+
+        // chuyển đổi thành chiều dài của mảnng
+        let getLength = ["Nguyễn", "Văn", "Nhất"].map(item => item.length);
+        console.log(getLength); // 6,3,4
+
+        //so sánh theo thứ tự tăng dần
+        console.log( [1,2,0,14,7].sort( (a,b) => a-b) ); // giảm dần ta lấy b-a
+
+        // tách dấu cộng và đưa phần tử vào mảng
+        let names = 'nhat+nguyen+van';
+        let arrNames = names.split('+');
+        for(let key of arrNames){
+            console.log(`ten cua quy ong la ${key}`);
+        }
+
+        //reduce
+
+        let arrReduce = [1, 2, 2, 3];
+        let reduceResult = arrReduce.reduce( (a,b) => (a+b), 0);
+        console.log((reduceResult));
+        
+        // isArray()
+        console.log(Array.isArray([]));// true
+        console.log(Array.isArray({}));// flase
+
+        // tìm phần tử trong hai mảng
+        let user = {
+            age: 18,
+            nguoitre(tuoi){
+                return tuoi.age < user.age;
+            }
+        };
+        let arrUser = [
+            {age: 14},
+            {age: 19}
+        ];
+
+        let timKiem = arrUser.filter(user.nguoitre, user);
+        console.log(timKiem)
+
+        //
+    </script>
+</body>
+</html>

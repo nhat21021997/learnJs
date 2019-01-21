@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="process"></div>
+    <div id="process2"></div>
+
+    <script>
+        function printTime(from, to) {
+            let i = from;
+
+            setTimeout(function go(){
+                //in gía trị đầu của i ra.
+                process.innerHTML = i;
+                if(i < to){
+                    // nếu i < to thì gọi lại chính func: gọi là đệ qui
+                    setTimeout(go, 1000); // tham chiếu chứ không phải là chạy hàm
+                }
+                i++;
+            }, 1000);
+        }
+        printTime(1, 10);
+
+        //sử dụng setInterval
+
+        function intervalTime(from, to){
+            let i = from;
+
+           let timeId = setInterval( function go(){
+                process2.innerHTML = i;
+                
+                if(i == to) {
+                    clearInterval(timeId);
+                }
+                i++;
+            }, 1000)
+        }
+
+        intervalTime(1, 10);
+    </script>
+
+    <div id="countMs">
+
+    </div>
+    <script>
+        let countId = 0;
+        let start = Date.now();
+
+        function go() {
+            countMs.innerHTML = countId;
+            
+            if(countId == 1000) {
+                countMs.innerHTML = Date.now()-start + 'ms';
+            }else {
+                setTimeout(go, 1000);
+            }
+
+            for(let i = 0 ; i < 100;i++){
+                countId++;
+            }
+        }
+        go();
+
+        //
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum(a) {
+            //gan gia tri ban dau = so thu nhat
+            let currentSum = a;
+
+            function f(b){
+                //lay so thu nhat + so thu 2
+                currentSum += b;
+                //dung de quy goi lai chinh no, de tinh so thu 3
+                return f;
+            }
+            //convert sang kieu so
+            f.toString = function() {
+                return currentSum;
+            };
+            return f;
+        }
+        let tong;
+        tong = sum(1)(2)(3);
+        console.log(tong);
+    </script>
+</body>
+</html>

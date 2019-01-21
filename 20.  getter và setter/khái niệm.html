@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+
+            * get : Không có đối số , hoạt động khi thuộc tính được đọc
+            * set : có một đối số ,được gọi khi thuộc tính được đọc
+            * 
+
+        /*
+
+        let user = {
+            name: 'Nhat',
+            surName: 'Nguyen',
+
+            get fullName() {
+                return this.name + this.surName;
+            },
+
+            set fullName(value) {
+                [this.surName, this.name] = value.split(" ");
+            }
+        };
+        
+        user.fullName = "Nguyen Hai";
+        console.log(user.name);
+
+    </script>
+</body>
+</html>

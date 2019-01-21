@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function User(name) {
+			//this = {};
+
+			//thêm phần tử vào this
+			this.name = name;
+			this.isAdmin = false;
+			//return this;
+		}
+
+		let newUser = new User('Nhat');
+		let newUser1 = new User('Tuan');
+		/*
+		let newUser = {
+			name : "nhat",
+			isAdmin: false,
+		}
+		*/
+		console.log(newUser.name);
+		console.log(newUser1.name);
+	</script>
+</body>
+</html>

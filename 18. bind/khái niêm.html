@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = {
+            name: 'Nhat',
+        };
+
+        function getName() {
+            console.log(`ten cua ban la: ${this.name}`);
+        }
+
+        let assign = getName.bind(user);// dung de nhin thay this o mot doi tuong khac.
+        assign();
+    </script>
+
+    <script>
+        function sayHi() {
+            console.log(this.name);
+        }
+        sayHi.test = 5;
+        let add = sayHi.bind({
+            name: 'john',
+        });
+
+        console.log(add);
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let company = {
+            sales: [{name: "Nhat", salary: 1000}, {name: 'Hai', salary: 500}],
+            banhang: {
+                sites: [{name: 'a', salary: 10}],
+                off : [{name: 'b', salary: 20}]
+            }
+        };
+
+        function tinhLuong(salaris) {
+            if(Array.isArray(salaris)){
+                return salaris.reduce( (prev, current) => prev + current.salary, 0);
+            }else {
+                let sum = 0;
+                for( let value1 of Object.values(salaris)){
+                     sum += tinhLuong(value1);
+                     console.log(value1);
+                }
+                return sum;
+            }
+        }
+
+        console.log( tinhLuong(company.banhang) );
+    </script>
+</body>
+</html>

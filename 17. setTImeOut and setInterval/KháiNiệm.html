@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+
+        * setTimeOut cho phép chức năng chạy 1 lần sau khoảng thời gian
+        * setInterval cho phép chức năng chạy thường xuyên sau nhiều mốc time. muốn dừng nó lại sau một mốc thời gian dùng clearInterval
+        * Sử dụng sayhi thay thì sayhi() vì điều mong đợi của setTimeOut là tham chiếu đến chức năng chứ không phải chạy chức năng.
+        * 
+
+    */
+        // cú pháp
+        // let timeId = setTimeOut(func|code, delay[, arg1, arg2,...]);
+        //delay tính = ms : 1000ms = 1s
+        //arg đối số của chức năng
+
+        // recursive setTimeOut
+        // let i = 100;
+        // setTimeout(function run(){
+        //     func(i);
+        //     // đệ quy để chạy nhiều mốc thời gian.
+        //     setTimtOut(run, 100); // tham chiếu đến nó chứ không phải chạy nó
+        //     alert('Nhat');
+        // }, 100)
+    </script>
+
+    <div id="xuly"></div>
+    <script>
+        let time = 0;
+
+        function count() {
+
+            do {
+                time++;
+                xuly.innerHTML = time;
+            } while (time % 1000 != 0); // các time cách nhau  1000ms
+
+            if (time < 1e7) {
+                setTimeout(count, 2000); // delay các lần chạy là 2000ms
+            }
+        }
+        count();
+    </script>
+</body>
+
+</html>

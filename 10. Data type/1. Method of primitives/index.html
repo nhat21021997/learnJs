@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+			* Có 6 loại dữ liệu primitive: number, string, boolean, symbol, null, underfined.
+			* 6 loại trên không thể lưu trữ dữ liệu , nó được thực hiện bởi trợ giúp của các đối tượng tạm thời.
+			* Một đối tượng có ưu điểm là chúng ta có thể lưu trữ một hàm như một thuộc tính của nó.
+
+			*Một đối tượng có thể lưu trữ nhiều thuộc tính.
+			* tr.toUpperCase() trả về 1 chuỗi viết hoa.
+			* n.toFixed(2) làm tròn với độ chính xác đã cho.
+
+		*/
+
+		let john = {
+			name: 'Nhat',
+			sayHi: function() {
+				console.log( this.name.toUpperCase() );
+			}
+		};
+		john.sayHi(); // tạo ra đối tượng john với phương thức sayHi.
+	</script>
+</body>
+</html>

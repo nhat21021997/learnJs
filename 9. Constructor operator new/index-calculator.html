@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Calulator() {
+			this.read = function() {
+				this.a = +prompt('a?','');
+				this.b = +prompt('b?','');
+			},
+			this.sum = function() {
+				return this.a + this.b;
+				//return this;
+			},
+			this.mul = function() {
+				return this.a * this.b;
+				//return this;
+			}
+		}
+
+		let caculator = new Calulator();
+		caculator.read();
+		console.log( caculator.sum() );
+		console.log( caculator.mul() );
+
+	</script>
+</body>
+</html>
