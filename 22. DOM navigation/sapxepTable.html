@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <table id="table1">
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td>John</td>
+      <td>Smith</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Pete</td>
+      <td>Brown</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>Ann</td>
+      <td>Lee</td>
+      <td>5</td>
+    </tr>
+  </table>
+
+  <script>
+    let sortTable = Array.from(table1.rows) // đưa phần tử tr vào mảng
+    .slice(1) // bỏ đi phần tiêu đề tr[0]
+    .sort((rowA,rowB) => rowA.cells[0].innerHTML > rowB.cells[0].innerHTML ? 1 : -1);
+    //rowA.cells[0].innerHTML để lấy ra text trong td, rowA.cells[0] : lấy <td> text</td>
+
+    table1.tBodies[0].append(...sortTable);
+    
+  </script>
+
+</body>
+</html>

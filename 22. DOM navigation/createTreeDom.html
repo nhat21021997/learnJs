@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="container"></div>
+
+        <script>
+            // for in để đi qua tất cả các khóa của đối tượng.
+          let dulieu = {
+              truonghoc : {
+                giaovien: {
+                    toan: {},
+                    van: {}
+                },
+                hocsinh: {
+                    lop1: {
+                        no:{}
+                    },
+                    lop2: {
+
+                    },
+                }
+              },
+              nha: {
+                  ban: {}
+              }
+          };
+
+          function createTreeDom(container, obj) {
+              container.append(createTree(obj));
+          }
+
+          function createTree(obj) {
+
+              if(!Object.keys(obj).length) return;
+
+              let ul = document.createElement('ul');
+
+              for(let key in obj) {
+                let li = document.createElement('li');
+                li.innerHTML = key ;
+
+                let childrenUl = createTree(obj[key]);
+                if(childrenUl) {
+                    li.append(childrenUl);
+                }
+                ul.append(li);
+              }
+              return ul;
+          }
+
+          let container = document.getElementById('container');
+          createTreeDom(container, dulieu);
+        </script>
+</body>
+</html>

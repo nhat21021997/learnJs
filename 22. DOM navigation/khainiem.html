@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        ---------ChildNodes----------
+            * childNodes Giống như mảng nhưng không phải mảng
+            * Dùng for of để lặp lại phần tử
+            * Các phương thức mảng sẽ không hoạt động bởi vì nó không phải là mảng. filter
+            * Không sử dụng for in cho childNodes.
+            * Phụ huynh có sẵn parentNodes.
+            * Nút tiếp theo cùng cha mẹ là nextSibling ngược lại là previusSibling hay dgl hàng xóm
+            * 
+            * getElementsByTagName tìm kiếm phần tử với các thẻ đã cho trả về bộ sưu tập của chúng( sai lầm khi sử dụng trả về giá trị . nó không hoạt động)
+            * getElementById: là duy nhất nên không có 's'.
+            * getElementsByClassName trả về lớp có chứa phần tử css đã cho.
+            * getElementsByName : Trả về phần tử với name thuộc tính đã cho.Cái này hiếm khi được sử dụng.
+            * querySelectorAll(css) : trẩ về khớp với bộ css đã cho.
+            * (1) elem.catches(css) : không tìm kiếm và trả về true nếu tồn tại or false,
+            * elem.hasAttribute(name) : Kiểm tra sự tồn tại
+            * elem.getAttribute(name) :để có được giá trị
+            * elem.setAttribute(name, value) : để đặt giá trị
+            * elem.removeAttribute(name) : để loại bỏ thuộc tính.
+            * elem.attributes : tập hợp tất cả các thuộc tính.
+            
+        */
+
+        
+    </script>
+
+    <table id="table">
+        <tr>
+          <td>Your age:</td>
+          <td>
+            <label>
+              <input type="radio" name="age" value="young" checked> less than 18
+            </label>
+            <label>
+              <input type="radio" name="age" value="mature"> from 18 to 50
+            </label>
+            <label>
+              <input type="radio" name="age" value="senior"> more than 60
+            </label>
+          </td>
+        </tr>
+      </table>
+
+      <script>
+          let inputs = table.getElementsByTagName('input');// 
+
+          for(let input of inputs){
+              console.log(input.value + ' ' + input.checked);
+          }
+          // lấy giá trị của input
+          //let input1 = table.getElementsByTagName('input')[0].value = 5;
+      </script>
+
+      <!-- -------------------------Tìm kiếm class article-------------------------- -->
+
+        <form name="my-form">
+            <div class="article">Article</div>
+            <div class="long article">Long article</div>
+        </form>
+        <script>
+            let name = document.getElementsByName('my-form')[0]; // cái này cần có ngoặc vuông + vị trí phần tử
+
+            let articles = name.getElementsByClassName('article');
+            console.log(articles.length);
+        </script>
+
+        <!-- 1 -->
+        <div id="link-test">
+            <a href="http://example.com/file.zip">...</a>
+            <a href="http://ya.ru">...</a>
+        </div>
+        <script>
+            let test = document.getElementById('link-test');
+
+            for(let elem of test.children){
+                if(!elem.matches('a[href$="zip"]')){
+                    console.dir(elem.href);
+                    console.log(elem.href);
+                }
+            }
+        </script>
+
+        <!-- 2 -->
+        <ul class="nhat">
+            <li>Nhat</li>
+            <li>Hai</li>
+        </ul>
+
+        <script>
+            let nhat = document.querySelectorAll('.nhat>li');
+
+            for(let key of nhat){
+                let title = key.firstChild.data;
+                console.log(title);
+            }
+        </script>
+</body>
+</html>

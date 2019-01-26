@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+        * document.createElement(tag) : tạo một phần tgử với thẻ đã cho.
+        * document.createTextNode(text) : Tạo một nút văn bản với văn bản đã cho
+        * appendChild(tag) : chèn phần tử vào đâu đó html
+        * parentElem.insertBefore(node, nextSibling): chèn node vào trước sibling của parentElem. 
+        * parentElem.replaceChild(node, oldChild) : thay thế node cũ.
+        * parentElem.removeChild(node);  xóa đứa trẻ khỏi phần tử chả của nó/ tồn tại do lịch sử.   
+        * node.remove() xóa node đó.
+    */
+    </script>
+
+    <ol id="list">
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+    </ol>
+    <script>
+        let node = document.createElement('div');
+        node.innerHTML = "1.1 Nguyen Nhat";
+        list.insertBefore(node, list.children[1]);
+        list.insertAdjacentHTML("afterbegin", `<b>Nhat</b>`);
+    </script>
+</body>
+</html>
+
+<script>
+    /*
+     cho tag ol : 
+        node.append(...nodes or strings)- nối các nút hoặc chuỗi ở cuối node,:  thêm vào cuối con của ol
+        node.prepend(...nodes or strings)- chèn các nút hoặc chuỗi vào đầu node, thêm vào đầu con của ol
+        node.before(...nodes or strings)Tích hợp các nút hoặc chuỗi trước node, thêm vào ngay trước ol
+        node.after(...nodes or strings)Cài đặt các nút hoặc chuỗi sau node, thêm vào ngay sau ol
+        node.replaceWith(...nodes or strings)Thay thế nodebằng các nút hoặc chuỗi đã cho
+       
+    */
+</script>

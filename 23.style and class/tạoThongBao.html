@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .welcome{
+            color: red;
+            background: #675754;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function showNotification({top = 0, right = 0,html, className}) {
+            let div = document.createElement('div');
+            div.className = 'notification';
+            if(className){
+                div.classList.add(className);
+            }
+            div.style.top = top + 'px';
+            div.style.right = right + 'px';
+            div.innerHTML = html;
+            document.body.append(div);
+
+            setTimeout(() => div.remove(), 1500);
+        }
+
+        setInterval(() => {showNotification({
+            top: 20,
+            right: 20,
+            html: 'Nhat',
+            className: 'welcome'
+        });
+        }, 2000);
+    </script>
+</body>
+</html>
